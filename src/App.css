@@ -1,0 +1,127 @@
+.App {
+  	text-align: center;
+}
+
+.App-header {
+  	background-color: #333;
+ 	height: 150px;
+  	padding: 20px;
+ 	color: #fff
+}
+
+#map {
+  	height: 100vh;
+}
+
+html, body {
+  	height: 100%;
+  	margin: 0;
+  	padding: 0
+}
+
+#navigation {
+  width:100%;
+  height: auto;
+}
+
+#navigation nav.heading {
+  background-color : #000;
+  padding : 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#navigation nav.heading #header {
+  font-size: 1.5em;
+  color: #fff;
+}
+
+#locationList .hamburger-menu {
+  position :absolute;
+  top : 10px;
+  left: 20px; 
+}
+#locationList .hamburger-menu div {
+
+  width: 35px;
+  height: 5px;
+  margin: 5px 0;
+  background-color: #fff;
+}
+
+#locationList .menu-list {
+  position: absolute;
+  top: 50px; 
+  margin: 0;
+  background-color: #000;
+  width: 30%;
+  height: 100vh;
+  overflow: scroll;
+  list-style: none;
+  padding-left: 0; 
+}
+
+#locationList .menu-list input {
+  margin: 0;
+  width: 100%;
+  height: 35px;
+  font-size: 1.2em;
+  font-weight: 500
+} 
+
+#locationList ul.menu-list li {
+  padding: 15px 0 15px 15px ;
+  margin-bottom : auto;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#locationList .closebtn {
+  position: absolute;
+  top: 0;
+  right: 0.5px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+@media screen and (max-width: 750px) {      
+    header nav#menu ul:hover > li{
+        display:block !important;
+    }
+
+    header nav#menu ul li{
+        display:none !important;
+    }
+}
