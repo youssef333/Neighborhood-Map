@@ -1,4 +1,4 @@
-﻿﻿# Neighborhood-Map Project
+#Neighborhood-Map Project
 
 ## Table of Contents
   - [Instructions](#Instructions)
