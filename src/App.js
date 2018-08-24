@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import Sidebar from './sidebar'
+
 
 class App extends Component {
 
 	state= {
 		venues: [],
-		markers: [],
 		query : '',
-    	menu : []
+		searchedLists: [],
 	}
+
+	updateQuery=(query) => {
+    this.setState({query:query})
+  	}
 
   	componentDidMount() {
   		this.getVenues()
@@ -44,7 +47,6 @@ class App extends Component {
       	})
 	}
 
-
   	initMap= () => {
 
     // Map
@@ -77,22 +79,69 @@ class App extends Component {
     		infowindow.open(map, marker);
     		infowindow.setContent(contentString);
   		});
-	});
-	
+	});	
 }
+
+
+/*updateQuery=(query) => {
+    this.setState({query:query})
+    this.updateSearchedLists(query)
+  }
+
+  updateSearchedLists = (query) => {
+    if(query) {
+    .search(query)
+    .then((searchedLists) => {
+      if (searchedLists.error) {
+        this.setState({ searchedLists : [] })
+      } else {
+        this.setState({ searchedLists : searchedLists })
+      }
+      
+      })
+    } else {
+      this.setState({ searchedLists : [] })
+    }
+  }
+  */
 
   	render() {
     	return (
       		<main>
-      		<div className="App" >
-          <section id='navigation' label='navigation'>
-                  <nav className='heading' label='header'>
-                        <header id='header'>NewYork</header>
-                  </nav>
-          </section>
-        		<div id="map" role="application"></div>
-        	</div>
-                <Sidebar />
+	      		<div className="App" >
+		          <section id='navigation' label='navigation'>
+		                  <nav className='heading' label='header'>
+		                        <header id='header'>NewYork</header>
+		                  </nav>
+		          </section>
+	        		<div id="map" role="application"></div>
+	        	</div>
+	                
+	            <nav id='locationList' aria-label='location-list' tabIndex='0' >
+		            <ul className='menu-list'
+		                aria-label='list-menu' 
+		                id='myUl' 
+		                tabIndex='1'
+		            >
+
+	                <input type='text' 
+	                       id='myInput' 
+	                       name='search'
+	                       autoComplete='on' 
+	                       aria-label='input-search'
+	                       placeholder='Search' 
+	                       value={this.state.query} 
+	                       onChange={(event)=>this.updateQuery(event.target.value)}
+	                />
+
+			       {
+			       	this.state.venues.map((element) => ( 
+			        <li className='list-item'><a>{element.venue.name}</a></li>
+			        ))
+			       }
+
+	            	</ul> 
+	           </nav> 
      	 	</main>
     	)
   	}
