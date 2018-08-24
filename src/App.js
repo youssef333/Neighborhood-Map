@@ -82,29 +82,6 @@ class App extends Component {
 	});	
 }
 
-
-/*updateQuery=(query) => {
-    this.setState({query:query})
-    this.updateSearchedLists(query)
-  }
-
-  updateSearchedLists = (query) => {
-    if(query) {
-    .search(query)
-    .then((searchedLists) => {
-      if (searchedLists.error) {
-        this.setState({ searchedLists : [] })
-      } else {
-        this.setState({ searchedLists : searchedLists })
-      }
-      
-      })
-    } else {
-      this.setState({ searchedLists : [] })
-    }
-  }
-  */
-
   	render() {
     	return (
       		<main>
