@@ -36,18 +36,6 @@ html, body {
   color: #fff;
 }
 
-#locationList .hamburger-menu {
-  position :absolute;
-  top : 10px;
-  left: 20px; 
-}
-#locationList .hamburger-menu div {
-
-  width: 35px;
-  height: 5px;
-  margin: 5px 0;
-  background-color: #fff;
-}
 
 #locationList .menu-list {
   position: absolute;
@@ -63,6 +51,7 @@ html, body {
 
 #locationList .menu-list input {
   margin: 0;
+  padding: 10px;
   width: 100%;
   height: 35px;
   font-size: 1.2em;
@@ -90,9 +79,13 @@ ul {
     overflow: auto;
 }
 
+li {
+  color: #fff;
+}
+
 li a {
     display: block;
-    color: #000;
+    color: #fff;
     padding: 8px 16px;
     text-decoration: none;
 }
@@ -105,14 +98,6 @@ li a.active {
 li a:hover:not(.active) {
     background-color: #555;
     color: white;
-}
-
-#locationList .closebtn {
-  position: absolute;
-  top: 0;
-  right: 0.5px;
-  font-size: 36px;
-  margin-left: 50px;
 }
 
 
